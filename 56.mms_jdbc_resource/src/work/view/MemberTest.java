@@ -141,6 +141,7 @@ public class MemberTest {
 	public static void print(String message) {
 		if (message != null) {
 			System.out.println("\n### " + message + " ###");
+			System.out.println("\n### " + message + " ###");
 		}
 	}
 
