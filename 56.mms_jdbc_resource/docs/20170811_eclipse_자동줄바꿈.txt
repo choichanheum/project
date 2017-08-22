@@ -1,0 +1,23 @@
+## eclipse 자동줄바꿈 설정 ##
+
+[Eclipse] - [window] - [preferences] - [Java] - [Code Style] - [Formatter]
+=> Edit 버튼
+=> Line Wrapping  => Maximum line width : 150 ( 본인 화면크기에 맞게 적정 설정)
+=> Comments => Maximum line width for comments : 9999
+
+=> 설정 완료 후 [ Ctrl + Shift + F ] 변경 formatter 적용
+
+## 화면 크게보기 단축키
+-- Ctrl+M
+
+## 이클립스에서 자동 줄바꿈을 해주는 플러그인 설치
+
+1. Help > Install New Software
+2. Add 버튼 클릭
+3. Name: Virtual Word Wrap, Location: http://ahtik.com/eclipse-update/
+4. 설치 고고싱
+5. 설치 후 텍스트에디터에서 마우스 오른쪽 클릭을 하면 팝업메뉴에 
+    Virtual Word Wrap이라는메뉴가 생겨 있음. 
+	토글로 자동줄바꿈 설정가능.
+
+

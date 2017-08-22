@@ -1,0 +1,72 @@
+## 자바 개발환경 구축 
+1. jdk download 설치
+2. java api documentation download 압축해제(설치) : off line
+	java api documentation : on line
+
+
+ ## JDBC 프로그래밍 절차 : 
+ 
+ 1. 드라이버 로딩
+ 2. db 서버 연결
+ 3. sql 통로 개설
+ 4. sql 수행
+ 5. 결과처리
+ 6. 자원해제
+
+ ## JDBC Property : 환경설정
+ 1. driver = ""
+ 2. url = ""
+ 3. user = "hr"
+ 4. password = "tiger"
+ 
+ ## JDBC Exception Handling
+ 1. ClassNotFoundException
+ 2. SQLException
+ 
+ ## JDBC Driver 위치 
+ -- Oracle : ojdbc6.jar => jdk6.0 jdbc 구현 driver
+ 1. 컴퓨터시스템(공통) 사용 : jdk\jre\lib\ext> 폴더에 복사
+ 2. 프로젝트 단위 사용 : 별도의 classpath 추가 설정
+ 
+ ## javac / java 사용한 클래스를 찾아가는 검색 경로 : classpath
+ 1. rt.jar : Java SE (표준 api)
+ 2. jdk\jre\lib\ext> 폴더에 있는.jar
+ 3. set classpath=환경설정폴더지정한 파일
+ 4. classpath 환경변수 미설정시에는 현재 폴더(working directory)
+
+
+## Statement
+-- 동적 SQL 수행 통로
+-- 실행시점 sql 구문에 오류 발생
+-- N/W traffic 발생 : sql 구문 , data 가 함께 전송
+-- SQL 문자열 변환
+-- SQL Injection 보안 이슈 야기
+
+## PreparedStatement
+-- 정적 SQL 전용 통로
+--  N/W traffic 감소 :  DATA만 전송
+-- setString() : sql 문자열로 자동 변환처리
+-- SQL Injection 발생 방지
+
+## CallableStatement
+-- DB 서버에 저장된 Stored Procedure, Stored Function 호출 사용
+-- PL/SQL
+
+## Statement 예제 코드
+Statement stmt = conn.createStatement();
+String sql = "insert into members values('aaa', 'bbb', 'ccc')";
+stmt.executeUpdate(sql);
+
+## PreparedStatement 예제 코드
+String sql = "insert into members values(?, ?, ?)";
+PreparedStatement pstmt = conn.prepareStatement(sql);
+
+pstmt.setString(1, memberId");
+pstmt.setInt(2, mileage);
+pstmt.setString(3, mobile);
+
+pstmt.executeUpdate();		
+
+// 주의사항 : ? 매핑되는 값을 설정, 실행시에 sql 구문을 지정해서는 안됨 
+
+

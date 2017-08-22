@@ -1,0 +1,47 @@
+## JDBC Property 외부 자원파일 설정 ##
+
+## JDBC DB 서버 연결 property
+-- 소스코드에 하드코딩 : 유지보수 문제
+public class FactoryDao {
+	private String driver = "oracle.jdbc.driver.OracleDriver";
+	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
+	private String user = "hr";
+	private String password = "tiger";
+}
+
+-- 해결책 : 외부 자원파일 분리 설계 
+	=> java.io.*
+	=> java.util.ResourceBundle
+
+
+## ResourceBundle 사용 규칙
+1. 파일 확장자 : filename.properties
+2. 파일 저장위치 : 클래스패스기준 상대경로 지정
+	=> classes\서브폴더\파일명.properties
+	=> (eclipse 개발 자동 xcopy) src\서브폴더\파일명.properties
+3. 파일명.properties 설정
+	key=value
+
+
+## 예시 코드 : FactoryDao
+// 클래스패스기준 상대경로 지정, 파일의 확장자는 표기하지 않음
+String baseName = "conf/dbserver";
+ResourceBundle resource = ResourceBundle.getBundle(baseName);
+String driver = resource.getString("oracle.driver");
+
+
+## dbserver.properties
+oracle.driver=oracle.jdbc.driver.OracleDriver
+oracle.url=jdbc:oracle:thin:@127.0.0.1:1521:XE
+oracle.user=hr
+oracle.password=tiger
+
+
+## Web Application 등에서 외부 자원 파일 및 환경설정 
+-- Servlet/JSP
+-- Mybatis F/W, Spring F/W
+-- XML : eXtensible Markup Language
+-- DTD, Schema : XML 파일 구조에 대한 규칙 기술
+-- 환경설정
+-- sever.xml, context.xml
+-- dbserver.properties

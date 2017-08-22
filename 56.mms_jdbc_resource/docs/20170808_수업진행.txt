@@ -1,0 +1,87 @@
+## 메서드 ##
+역할 : 객체가 해야할 행위(일, 업무)
+형식 : 
+[접근제한자][사용제한자] 반환타입 메서드이름([타입 매개변수명, 타입 매개변수명]) 
+			[throws 예외클래스명1, 예외클래스명x) {
+				// 수행문
+			}
+
+## 회원가입 요청제어 처리 프로세스 ##
+1. 아규먼트가 null이 아니면
+2. 회원의 아이디, 암호, 이름, 연락처, 이메일을 가져와서
+3. 아이디가 null이 아니면서 공백을 제거한 아이디의 길이가 6자리 ~ 20자리 이내이면
+4. 아이디가 중복아이디가 아니면
+5. 암호가 null 아니면서 공백을 제거한 암호의 길이가 8자리 ~ 20자리 이내이면
+6. 이름이 null 아니면서 공백을 제거한 이름의 길이가 0보다 큰지 비교해서
+7. 연락처가 null 아니면서 공백을 제거한 연락처가 길이가 0보다 큰지 비교해서
+8. 이메일이 null 아니면서 공백을 제거한 이메일이 길이가 0보다 큰지 비교해서
+9. 1~8번 사항이 올바르면 올바른 데이터이므로 Model에게 회원가입 요청 의뢰
+10. Model 회원가입요청 결과받아서 회원가입요청 응답처리
+	(10-1) 가입 성공
+	(10-2) 가입 실패
+11. 1~8번 사항이 올바르지 않으면 회원가입 오류 응답처리
+
+
+## Collection ##
+-- java.util.Collection
+-- java.util.Set
+-- java.util.Map
+-- java.util.List
+
+## ArrayList
+-- 등록 : add(Object)
+-- 조회 : get(int)
+-- 변경 : set(int, Object)
+-- 삭제 : remove(int)
+-- 크기 : size() : int
+-- 저장여부 : isEmpty() : boolean
+
+select lengthb('가') from dual;
+
+
+## 과제
+-- 회원관리를 위한 sql 구문 작성 : members_dml.sql
+-- MemberController 클래스와 매핑되는 MemberService 메서드 구현 : 
+	=> 수업시에 진행한 메서드 순서대로
+
+-- 지각 : Utility 클래스 구현(필수) , 나머지는 (기본)
+	=> 모든 메서드는 객체생성없이 사용할수 있는 메서드 구현
+
+## work.util.Utility 참고 api ## 
+
+-- 보안문자 발급 
+	=> java.lang.StringBuilder, StringBuffer, String
+	=> java.lang.Math#random()
+	=> java.util.Random
+	=> java.lang.System
+
+-- 현재날짜 조회 
+	=> java.util.Date
+	=> java.text.SimpleDateFormat
+	=> java.util.Locale
+
+-- 보안문자 변환
+	=> java.lang.StringBuilder, StringBuffer, String
+
+-- 숫자 천단위 컴마 변환
+	=> java.text.NumberFormat
+
+-- 숫자 통화단위 변환
+	=> java.text.NumberFormat
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
