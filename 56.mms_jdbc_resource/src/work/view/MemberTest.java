@@ -9,7 +9,7 @@ public class MemberTest {
 
 	public static void main(String[] args) {
 		// ������ �ʱ�ȭ ȸ�� ��ü ����
-		System.out.println("aaa");
+		System.out.println("bbb");
 		Member dto1 = new Member("test01","password01","ȫ�浿","010-1111-1111","test01@work.com","2017.05.05","G",7500,null);
 		Member dto2 = new Member("test02","password02","������","010-1111-1112","test02@work.com","2017.05.06","G",9500,null);
 		Member dto3 = new Member("test03","password03","�̼���","010-1111-1113","test03@work.com","2017.05.07","G",3000,null);
