@@ -8,17 +8,18 @@ import work.model.dto.Member;
 public class MemberTest {
 
 	public static void main(String[] args) {
-		// °ü¸®ÀÚ ÃÊ±âÈ­ È¸¿ø °´Ã¼ »ý¼º
-		Member dto1 = new Member("test01","password01","È«±æµ¿","010-1111-1111","test01@work.com","2017.05.05","G",7500,null);
-		Member dto2 = new Member("test02","password02","°­°¨Âù","010-1111-1112","test02@work.com","2017.05.06","G",9500,null);
-		Member dto3 = new Member("test03","password03","ÀÌ¼ø½Å","010-1111-1113","test03@work.com","2017.05.07","G",3000,null);
-		Member dto4 = new Member("test04","password04","±èÀ¯½Å","010-1111-1114","test04@work.com","2017.05.08","S",0,"¼ÛÁß±â");
-		Member dto5 = new Member("test05","password05","À¯°ü¼ø","010-1111-1115","test05@work.com","2017.05.09","A",0,null);
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ È¸ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+		System.out.println("aaa");
+		Member dto1 = new Member("test01","password01","È«ï¿½æµ¿","010-1111-1111","test01@work.com","2017.05.05","G",7500,null);
+		Member dto2 = new Member("test02","password02","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","010-1111-1112","test02@work.com","2017.05.06","G",9500,null);
+		Member dto3 = new Member("test03","password03","ï¿½Ì¼ï¿½ï¿½ï¿½","010-1111-1113","test03@work.com","2017.05.07","G",3000,null);
+		Member dto4 = new Member("test04","password04","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","010-1111-1114","test04@work.com","2017.05.08","S",0,"ï¿½ï¿½ï¿½ß±ï¿½");
+		Member dto5 = new Member("test05","password05","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","010-1111-1115","test05@work.com","2017.05.09","A",0,null);
 		
-		// È¸¿ø°ü¸® ¿äÃ»Á¦¾î°´Ã¼ »ý¼º : controller 
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½î°´Ã¼ ï¿½ï¿½ï¿½ï¿½ : controller 
 		MemberController controller = new MemberController();
 		
-		// Å×½ºÆ®½Ã¿¡ »ç¿ëÀ§ÇÑ º¯¼ö ¼±¾ð
+		// ï¿½×½ï¿½Æ®ï¿½Ã¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		ArrayList<String> message;
 		Member dto = null;
 		ArrayList<Member> list = new ArrayList<Member>();
@@ -26,117 +27,117 @@ public class MemberTest {
 		String memberId = null;
 		String memberPw = null;
 		
-		print("Å×½ºÆ®¸¦ À§ÇÑ È¸¿øÀüÃ¼»èÁ¦ ÃÊ±âÈ­");
+		print("ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­");
 		int rows = controller.removeAllMember();
-		print("È¸¿øÀÌ »èÁ¦Ã³¸®µÇ¾ú½À´Ï´Ù. : " + rows + "¸í");
+		print("È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. : " + rows + "ï¿½ï¿½");
 		
-		print("[°ü¸®ÀÚ] È¸¿ø µî·Ï");
+		print("[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] È¸ï¿½ï¿½ ï¿½ï¿½ï¿½");
 		controller.addMemberByAdmin(dto1);
 
-		print("[°ü¸®ÀÚ] ´ÙÁß È¸¿ø ¹èÄ¡ °¡ÀÔ");
+		print("[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½");
 		list.add(dto2);
 		list.add(dto3);
 		list.add(dto4);
 		list.add(dto5);
 		controller.addListMemberByAdmin(list);
 		
-		// È¸¿ø °¡ÀÔ : »ç¿ëÀÚ Á÷Á¢ ÀÔ·Â(±âº» ÀÏ¹ÝÈ¸¿ø)
-		Member dto6 = new Member("test20","password20","°­°æÇÑ","010-2222-1113","test20@work.com");
-		Member dto7 = new Member("test21","password21","±è½ÃÀº","010-2222-1114","test21@work.com");
-		Member dto8 = new Member("test22","password22","ÃÖÂùÈì","010-2222-1115","test22@work.com");
+		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½(ï¿½âº» ï¿½Ï¹ï¿½È¸ï¿½ï¿½)
+		Member dto6 = new Member("test20","password20","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","010-2222-1113","test20@work.com");
+		Member dto7 = new Member("test21","password21","ï¿½ï¿½ï¿½ï¿½ï¿½","010-2222-1114","test21@work.com");
+		Member dto8 = new Member("test22","password22","ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","010-2222-1115","test22@work.com");
 		
-		print("È¸¿øµî·Ï : ±âº» ÀÏ¹ÝÈ¸¿ø");
+		print("È¸ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½âº» ï¿½Ï¹ï¿½È¸ï¿½ï¿½");
 		print(controller.addMember(dto6));
 		print(controller.addMember(dto7));
 		print(controller.addMember(dto8));
 		
-		print("ÀüÃ¼È¸¿øÁ¶È¸");
+		print("ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸");
 		list = controller.getAllMember();
 		printAllMember(list);
 		
-		print("µî±Þº° È¸¿ø ÀüÃ¼È¸¿øÁ¶È¸ : ÀÏ¹ÝÈ¸¿ø");
+		print("ï¿½ï¿½Þºï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸ : ï¿½Ï¹ï¿½È¸ï¿½ï¿½");
 		list = controller.getAllMemberByGrade("g");
 		printAllMember(list);
 		
-		print("[°ü¸®ÀÚ] È¸¿ø º¯°æ : test03");
-		dto3 = new Member("test03","goodluck03","ÀÌ¼ºÈÆ","010-1111-1113","goodluck03@work.com","2017.05.07","S",0,"¼ÛÇý±³");
+		print("[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½] È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : test03");
+		dto3 = new Member("test03","goodluck03","ï¿½Ì¼ï¿½ï¿½ï¿½","010-1111-1113","goodluck03@work.com","2017.05.07","S",0,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		controller.setMember(dto3);
 		
-		print("µî±Þº° È¸¿ø ÀüÃ¼È¸¿øÁ¶È¸ : ¿ì¼öÈ¸¿ø");
+		print("ï¿½ï¿½Þºï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸ : ï¿½ï¿½ï¿½È¸ï¿½ï¿½");
 		list = controller.getAllMemberByGrade("S");
 		printAllMember(list);
 
-		print("µî±Þº° È¸¿ø ÀüÃ¼È¸¿øÁ¶È¸ : °ü¸®ÀÚ");
+		print("ï¿½ï¿½Þºï¿½ È¸ï¿½ï¿½ ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		list = controller.getAllMemberByGrade("A");
 		printAllMember(list);
 
-		print("³»Á¤º¸ Á¶È¸");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸");
 		dto = controller.getMyInfo("test01"); 
 		printMember(dto);
 
-		print("·Î±×ÀÎ");
+		print("ï¿½Î±ï¿½ï¿½ï¿½");
 		grade = controller.login("test01", "password01");
-		print("[·Î±×ÀÎµî±Þ : " + grade + "]");
+		print("[ï¿½Î±ï¿½ï¿½Îµï¿½ï¿½ : " + grade + "]");
 
 		grade = controller.login("test04", "password04");
-		print("[·Î±×ÀÎµî±Þ : " + grade + "]");
+		print("[ï¿½Î±ï¿½ï¿½Îµï¿½ï¿½ : " + grade + "]");
 
 		grade = controller.login("test05", "password05");
-		print("[·Î±×ÀÎµî±Þ : " + grade + "]");
+		print("[ï¿½Î±ï¿½ï¿½Îµï¿½ï¿½ : " + grade + "]");
 
-		print("È¸¿øÅ»Åð : test01, test02, test03, test20, test21");
+		print("È¸ï¿½ï¿½Å»ï¿½ï¿½ : test01, test02, test03, test20, test21");
 		String[] removes = {"test01", "test02", "test03", "test20", "test21"};
 		for (String removeMemberId: removes) {
 			print(controller.removeMember(removeMemberId));
 		}
 		
-		print("ÀüÃ¼È¸¿øÁ¶È¸");
+		print("ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸");
 		printAllMember(controller.getAllMember());
 		
-		print("¾ÏÈ£ º¯°æ Àü: ");
+		print("ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: ");
 		printMember(controller.getMember("test22"));
 		print(controller.setPassword("test22", "password22", "bluesky22"));
 		
-		print("¾ÏÈ£ º¯°æ ÈÄ: ");
+		print("ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½: ");
 		printMember(controller.getMember("test22"));
 		
-		print("³»Á¤º¸ º¯°æ Àü : test04");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : test04");
 		printMember(controller.getMember("test04"));
 		
-		dto = new Member("test04","happyday","±è¼öÇö","010-1111-2773","happyday04@korea.com");
+		dto = new Member("test04","happyday","ï¿½ï¿½ï¿½ï¿½ï¿½","010-1111-2773","happyday04@korea.com");
 		controller.setMyInfo(dto);
-		print("³»Á¤º¸ º¯°æ ÈÄ : test04");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ : test04");
 		printMember(controller.getMember("test04"));
 		
-		// test04, happyday, ±è¼öÇö, 010-1111-2773, happyday04@korea.com
-		print("¾ÆÀÌµð Ã£±â : ¸ð¹ÙÀÏ");
-		memberId = controller.findMemberIdByMobile("±è¼öÇö", "010-1111-2773");
-		print("±è¼öÇö´ÔÀÇ ¾ÆÀÌµðÀÔ´Ï´Ù. : " + memberId);
+		// test04, happyday, ï¿½ï¿½ï¿½ï¿½ï¿½, 010-1111-2773, happyday04@korea.com
+		print("ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½");
+		memberId = controller.findMemberIdByMobile("ï¿½ï¿½ï¿½ï¿½ï¿½", "010-1111-2773");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½Ô´Ï´ï¿½. : " + memberId);
 		
-		print("¾ÆÀÌµð Ã£±â : ÀÌ¸ÞÀÏ");
-		memberId = controller.findMemberIdByEmail("±è¼öÇö", "happyday04@korea.com");
-		print("±è¼öÇö´ÔÀÇ ¾ÆÀÌµðÀÔ´Ï´Ù. : " + memberId);
+		print("ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½ : ï¿½Ì¸ï¿½ï¿½ï¿½");
+		memberId = controller.findMemberIdByEmail("ï¿½ï¿½ï¿½ï¿½ï¿½", "happyday04@korea.com");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½Ô´Ï´ï¿½. : " + memberId);
 		
-		print("ºñ¹Ð¹øÈ£ Ã£±â : ");
-		memberPw = controller.findMemberPw("test04", "±è¼öÇö", "mobile", "010-1111-2773");
-		print("±è¼öÇö´ÔÀÇ ÀÓ½Ã¹ß±Þ¾ÏÈ£ÀÔ´Ï´Ù. : " + memberPw);
+		print("ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½ : ");
+		memberPw = controller.findMemberPw("test04", "ï¿½ï¿½ï¿½ï¿½ï¿½", "mobile", "010-1111-2773");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó½Ã¹ß±Þ¾ï¿½È£ï¿½Ô´Ï´ï¿½. : " + memberPw);
 		
-		memberPw = controller.findMemberPw("test04", "±è¼öÇö", "email", "happyday04@korea.com");
-		print("±è¼öÇö´ÔÀÇ ÀÓ½Ã¹ß±Þ¾ÏÈ£ÀÔ´Ï´Ù. : " + memberPw);
+		memberPw = controller.findMemberPw("test04", "ï¿½ï¿½ï¿½ï¿½ï¿½", "email", "happyday04@korea.com");
+		print("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó½Ã¹ß±Þ¾ï¿½È£ï¿½Ô´Ï´ï¿½. : " + memberPw);
 		
-		print("ºñ¹Ð¹øÈ£ Ã£±â ÈÄ ³»Á¤º¸ Á¶È¸ : test04");
+		print("ï¿½ï¿½Ð¹ï¿½È£ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ : test04");
 		printMember(controller.getMember("test04"));
 		
-		print("ÀüÃ¼È¸¿øÁ¶È¸");
+		print("ï¿½ï¿½Ã¼È¸ï¿½ï¿½ï¿½ï¿½È¸");
 		printAllMember(controller.getAllMember());
 
-		print("·Î±×¾Æ¿ô");
+		print("ï¿½Î±×¾Æ¿ï¿½");
 		controller.logout();
 	}
 
 	/**
-	 * Å×½ºÆ®¸¦ À§ÇÑ °´Ã¼ »ý¼º¾øÀÌ ¾Æ±Ô¸ÕÆ®·Î Àü´Þ¹ÞÀº ¹®ÀÚ¿­À» Ãâ·Â
-	 * @param message ¸Þ¼¼Áö
+	 * ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ±Ô¸ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Þ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	 * @param message ï¿½Þ¼ï¿½ï¿½ï¿½
 	 */
 	public static void print(String message) {
 		if (message != null) {
@@ -146,7 +147,7 @@ public class MemberTest {
 	}
 
 	/**
-	 * Å×½ºÆ®¸¦ À§ÇÑ °´Ã¼ »ý¼º¾øÀÌ ¾Æ±Ô¸ÕÆ®·Î Àü´Þ¹ÞÀº ¸Þ¼¼Áö ¸®½ºÆ®¸¦ Ãâ·Â
+	 * ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ±Ô¸ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Þ¹ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½
 	 * @param message
 	 */
 	public static void print(ArrayList<String> message) {
@@ -157,14 +158,14 @@ public class MemberTest {
 	}
 	
 	/**
-	 * ÀÀ´ä°á°ú·Î ¹ÞÀº È¸¿øµéÀÇ ¸ñ·ÏÀ» Ãâ·Â
-	 * @param list È¸¿ø¸ñ·Ï
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	 * @param list È¸ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public static void printAllMember(ArrayList<Member> list) {
 		System.out.println();
 		
 		if (list == null || list.isEmpty()) {
-			System.out.println("Error : ÇØ´ç È¸¿øµéÀÇ Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("Error : ï¿½Ø´ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 			return;
 		}
 		
@@ -174,15 +175,15 @@ public class MemberTest {
 	}
 
 	/**
-	 * ÀÀ´ä°á°ú·Î ¹ÞÀº È¸¿ø Ãâ·Â
-	 * @param dto È¸¿ø
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½
+	 * @param dto È¸ï¿½ï¿½
 	 */
 	public static void printMember(Member dto) {
 		if (dto != null) {
 			System.out.println();
 			System.out.println(dto);
 		} else {
-			System.out.println("Error : " + dto.getMemberId() + "Á¤º¸°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù.");
+			System.out.println("Error : " + dto.getMemberId() + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 		}
 	}
 	
