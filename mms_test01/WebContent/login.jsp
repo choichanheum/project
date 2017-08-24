@@ -20,7 +20,6 @@
 		*/
 	
 		/* 로그인 입력 */
-		function 
 	
 	</script>
 	
